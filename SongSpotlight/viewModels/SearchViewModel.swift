@@ -9,12 +9,17 @@
 import Foundation
 
 class SearchViewModel : ObservableObject {
-    @Published var searchText = ""
+    private var counting = 2
+    @Published var searchText = "" {
+        didSet {
+            counting += 1
+            searchResults.append(SongPreview(title: searchText, artist: ArtistPreview(name: "Kanye", id: 1), image: nil, id: counting))
+        }
+    }
 
     @Published var searchResults : [SongPreview] = [SongPreview(title: "Monster", artist: ArtistPreview(name: "Kanye", id: 1), image: nil, id: 1), SongPreview(title: "Power", artist: ArtistPreview(name: "Kanye", id: 1), image: nil, id: 2)]
     
     init() {
         print("In VM init", searchText)
-        print(searchResults)
     }
 }
