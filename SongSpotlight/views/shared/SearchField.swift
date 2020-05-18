@@ -18,6 +18,7 @@ struct SearchField: View {
                 .imageScale(.large)
             TextField(placeholder, text: $searchText)
                 .font(.headline)
+            .disableAutocorrection(true)
         }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  ArtistPreview.swift
+//  Album.swift
 //  SongSpotlight
 //
 //  Created by Mike Griffin on 5/16/20.
@@ -8,7 +8,6 @@
 
 import Foundation
 
-struct ArtistPreview: Codable, Equatable, Identifiable {
-    let name: String
-    let id: Int
+struct Album : Codable {
+    let name : String
 }

@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F0E7E092471F75C00F265DC /* SongOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E7E082471F75C00F265DC /* SongOverviewView.swift */; };
+		7F0E7E0D2472035D00F265DC /* SearchRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E7E0C2472035D00F265DC /* SearchRowView.swift */; };
+		7F0E7E0F24722CC000F265DC /* ArtistListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E7E0E24722CC000F265DC /* ArtistListView.swift */; };
 		7F37A75324706CCF0063497D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F37A75224706CCF0063497D /* AppDelegate.swift */; };
 		7F37A75524706CCF0063497D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F37A75424706CCF0063497D /* SceneDelegate.swift */; };
 		7F37A75924706CD00063497D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F37A75824706CD00063497D /* Assets.xcassets */; };
@@ -19,9 +22,19 @@
 		7FA9AD502470B07A000E7FA7 /* ArtistPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9AD4F2470B07A000E7FA7 /* ArtistPreview.swift */; };
 		7FA9AD532470B37F000E7FA7 /* GeniusApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9AD522470B37F000E7FA7 /* GeniusApiService.swift */; };
 		7FA9AD552470B407000E7FA7 /* GeniusApiToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9AD542470B407000E7FA7 /* GeniusApiToken.swift */; };
+		7FA9AD572470B66D000E7FA7 /* SongSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9AD562470B66D000E7FA7 /* SongSearch.swift */; };
+		7FA9AD5A2470BA87000E7FA7 /* SongDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9AD592470BA87000E7FA7 /* SongDetailView.swift */; };
+		7FA9AD5C2470BAE6000E7FA7 /* SongDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9AD5B2470BAE6000E7FA7 /* SongDetailViewModel.swift */; };
+		7FA9AD5E2470BC4D000E7FA7 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9AD5D2470BC4D000E7FA7 /* Song.swift */; };
+		7FA9AD602470BCA9000E7FA7 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9AD5F2470BCA9000E7FA7 /* Album.swift */; };
+		B0F98E36A8CBBAA1362392CB /* Pods_SongSpotlight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADE851AE9501425F9E607FC3 /* Pods_SongSpotlight.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		35ABDB705BABDCFF58E15C85 /* Pods-SongSpotlight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SongSpotlight.release.xcconfig"; path = "Target Support Files/Pods-SongSpotlight/Pods-SongSpotlight.release.xcconfig"; sourceTree = "<group>"; };
+		7F0E7E082471F75C00F265DC /* SongOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongOverviewView.swift; sourceTree = "<group>"; };
+		7F0E7E0C2472035D00F265DC /* SearchRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRowView.swift; sourceTree = "<group>"; };
+		7F0E7E0E24722CC000F265DC /* ArtistListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistListView.swift; sourceTree = "<group>"; };
 		7F37A74F24706CCF0063497D /* SongSpotlight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SongSpotlight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F37A75224706CCF0063497D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F37A75424706CCF0063497D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +49,13 @@
 		7FA9AD4F2470B07A000E7FA7 /* ArtistPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistPreview.swift; sourceTree = "<group>"; };
 		7FA9AD522470B37F000E7FA7 /* GeniusApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeniusApiService.swift; sourceTree = "<group>"; };
 		7FA9AD542470B407000E7FA7 /* GeniusApiToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeniusApiToken.swift; sourceTree = "<group>"; };
+		7FA9AD562470B66D000E7FA7 /* SongSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongSearch.swift; sourceTree = "<group>"; };
+		7FA9AD592470BA87000E7FA7 /* SongDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetailView.swift; sourceTree = "<group>"; };
+		7FA9AD5B2470BAE6000E7FA7 /* SongDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongDetailViewModel.swift; sourceTree = "<group>"; };
+		7FA9AD5D2470BC4D000E7FA7 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		7FA9AD5F2470BCA9000E7FA7 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		ADE851AE9501425F9E607FC3 /* Pods_SongSpotlight.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SongSpotlight.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF66BEE922AA466AC97E8F0B /* Pods-SongSpotlight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SongSpotlight.debug.xcconfig"; path = "Target Support Files/Pods-SongSpotlight/Pods-SongSpotlight.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +63,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0F98E36A8CBBAA1362392CB /* Pods_SongSpotlight.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52583F50B19B21EA62170638 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ADE851AE9501425F9E607FC3 /* Pods_SongSpotlight.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7F37A74624706CCF0063497D = {
 			isa = PBXGroup;
 			children = (
 				7F37A75124706CCF0063497D /* SongSpotlight */,
 				7F37A75024706CCF0063497D /* Products */,
+				B7E14CD4E161E78EBDB74151 /* Pods */,
+				52583F50B19B21EA62170638 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,6 +124,7 @@
 		7F37A786247083970063497D /* views */ = {
 			isa = PBXGroup;
 			children = (
+				7FA9AD582470BA65000E7FA7 /* songs */,
 				7FA9AD46247094A7000E7FA7 /* search */,
 				7FA9AD452470949F000E7FA7 /* shared */,
 			);
@@ -111,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				7FA9AD432470843C000E7FA7 /* SearchView.swift */,
+				7F0E7E0C2472035D00F265DC /* SearchRowView.swift */,
 			);
 			path = search;
 			sourceTree = "<group>";
@@ -119,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				7FA9AD4A24709DC0000E7FA7 /* SearchViewModel.swift */,
+				7FA9AD5B2470BAE6000E7FA7 /* SongDetailViewModel.swift */,
 			);
 			path = viewModels;
 			sourceTree = "<group>";
@@ -128,6 +162,9 @@
 			children = (
 				7FA9AD4D2470B021000E7FA7 /* SongPreview.swift */,
 				7FA9AD4F2470B07A000E7FA7 /* ArtistPreview.swift */,
+				7FA9AD562470B66D000E7FA7 /* SongSearch.swift */,
+				7FA9AD5D2470BC4D000E7FA7 /* Song.swift */,
+				7FA9AD5F2470BCA9000E7FA7 /* Album.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -141,6 +178,25 @@
 			path = api;
 			sourceTree = "<group>";
 		};
+		7FA9AD582470BA65000E7FA7 /* songs */ = {
+			isa = PBXGroup;
+			children = (
+				7FA9AD592470BA87000E7FA7 /* SongDetailView.swift */,
+				7F0E7E082471F75C00F265DC /* SongOverviewView.swift */,
+				7F0E7E0E24722CC000F265DC /* ArtistListView.swift */,
+			);
+			path = songs;
+			sourceTree = "<group>";
+		};
+		B7E14CD4E161E78EBDB74151 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AF66BEE922AA466AC97E8F0B /* Pods-SongSpotlight.debug.xcconfig */,
+				35ABDB705BABDCFF58E15C85 /* Pods-SongSpotlight.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -148,9 +204,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F37A76324706CD00063497D /* Build configuration list for PBXNativeTarget "SongSpotlight" */;
 			buildPhases = (
+				5AFBFBAE547C42DDD40AB449 /* [CP] Check Pods Manifest.lock */,
 				7F37A74B24706CCF0063497D /* Sources */,
 				7F37A74C24706CCF0063497D /* Frameworks */,
 				7F37A74D24706CCF0063497D /* Resources */,
+				A7D1FC94F68E485D0967002C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -207,20 +265,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5AFBFBAE547C42DDD40AB449 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SongSpotlight-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7D1FC94F68E485D0967002C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SongSpotlight/Pods-SongSpotlight-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SongSpotlight/Pods-SongSpotlight-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SongSpotlight/Pods-SongSpotlight-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7F37A74B24706CCF0063497D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FA9AD5A2470BA87000E7FA7 /* SongDetailView.swift in Sources */,
 				7FA9AD442470843C000E7FA7 /* SearchView.swift in Sources */,
 				7FA9AD4B24709DC0000E7FA7 /* SearchViewModel.swift in Sources */,
 				7F37A75324706CCF0063497D /* AppDelegate.swift in Sources */,
 				7FA9AD48247094BB000E7FA7 /* SearchField.swift in Sources */,
+				7F0E7E092471F75C00F265DC /* SongOverviewView.swift in Sources */,
+				7FA9AD602470BCA9000E7FA7 /* Album.swift in Sources */,
 				7F37A75524706CCF0063497D /* SceneDelegate.swift in Sources */,
+				7FA9AD5C2470BAE6000E7FA7 /* SongDetailViewModel.swift in Sources */,
 				7FA9AD4E2470B021000E7FA7 /* SongPreview.swift in Sources */,
+				7F0E7E0D2472035D00F265DC /* SearchRowView.swift in Sources */,
 				7FA9AD552470B407000E7FA7 /* GeniusApiToken.swift in Sources */,
 				7FA9AD502470B07A000E7FA7 /* ArtistPreview.swift in Sources */,
+				7FA9AD572470B66D000E7FA7 /* SongSearch.swift in Sources */,
+				7FA9AD5E2470BC4D000E7FA7 /* Song.swift in Sources */,
 				7FA9AD532470B37F000E7FA7 /* GeniusApiService.swift in Sources */,
+				7F0E7E0F24722CC000F265DC /* ArtistListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,10 +462,12 @@
 		};
 		7F37A76424706CD00063497D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF66BEE922AA466AC97E8F0B /* Pods-SongSpotlight.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SongSpotlight/Preview Content\"";
+				DEVELOPMENT_TEAM = T24L76PMG9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SongSpotlight/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -373,10 +483,12 @@
 		};
 		7F37A76524706CD00063497D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35ABDB705BABDCFF58E15C85 /* Pods-SongSpotlight.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SongSpotlight/Preview Content\"";
+				DEVELOPMENT_TEAM = T24L76PMG9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SongSpotlight/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

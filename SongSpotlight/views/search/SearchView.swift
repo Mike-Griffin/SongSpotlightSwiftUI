@@ -28,10 +28,13 @@ struct SearchView: View {
             List {
                 Section(header: SearchField(searchText: $viewModel.searchText, placeholder: "Search song")) {
                     ForEach(currentSongs) { song in
-                        Text("\(song.title)")
+                        NavigationLink(destination: SongDetailView(preview: song)) {
+                            SearchRowView(songPreview: song)
+                        }
                     }
                 }
             }
+        .navigationBarTitle("Search")
         }
     }
 }

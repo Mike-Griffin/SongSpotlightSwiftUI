@@ -8,18 +8,39 @@
 
 import Foundation
 
-class SearchViewModel : ObservableObject {
-    private var counting = 2
-    @Published var searchText = "" {
-        didSet {
-            counting += 1
-            searchResults.append(SongPreview(title: searchText, artist: ArtistPreview(name: "Kanye", id: 1), image: nil, id: counting))
+
+    class SearchViewModel : ObservableObject {
+                
+        @Published var searchText = "" {
+            didSet {
+                performQuery(searchText)
+            }
+        }
+
+        @Published var searchResults = [SongPreview]()
+        
+        init() {
+            print("In VM init", searchText)
+        }
+        private var geniusApi = GeniusApiService()
+
+        
+        private func performQuery(_ q: String) {
+            let noSpaces = q.replacingOccurrences(of: " ", with: "%20")
+            geniusApi.fetchSearch(query: noSpaces, page: 1) { results in
+                switch(results){
+                case .success(let hits):
+                    var querySongs = [SongPreview]()
+                    for hit in hits {
+                        querySongs.append(hit.result)
+                    }
+                    self.searchResults = querySongs
+                case .failure:
+                    debugPrint("failed")
+                }
+            }
         }
     }
-
-    @Published var searchResults : [SongPreview] = [SongPreview(title: "Monster", artist: ArtistPreview(name: "Kanye", id: 1), image: nil, id: 1), SongPreview(title: "Power", artist: ArtistPreview(name: "Kanye", id: 1), image: nil, id: 2)]
     
-    init() {
-        print("In VM init", searchText)
-    }
-}
+
+
