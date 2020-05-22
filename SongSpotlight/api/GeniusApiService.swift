@@ -13,7 +13,7 @@ let apiEndpoint = "https://api.genius.com/"
 
 public struct GeniusApiService {
     func fetchSearch(query: String, page: Int, completion: @escaping (Result<[SongHit], Error>) -> ()) {
-        let searchUrlString = "\(apiEndpoint)search?q=\(query)&per_page=5&page=\(page)"
+        let searchUrlString = "\(apiEndpoint)search?q=\(query)&per_page=10&page=\(page)"
         guard let searchUrl = URL(string: searchUrlString) else {
             print("Failed to build URL")
             debugPrint(searchUrlString)

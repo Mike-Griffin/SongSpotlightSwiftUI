@@ -28,9 +28,9 @@ struct SongOverviewView: View {
             if song.writers != nil {
                 VStack {
                     Spacer()
-                    Text("Writing Contributors")
-                        .font(.headline)
-                    ArtistListView(artists: song.writers!)
+                    Section(header: Text("Writers")) {
+                        ArtistListView(artists: song.writers!)
+                    }
                 }
             }
             if song.producers != nil {

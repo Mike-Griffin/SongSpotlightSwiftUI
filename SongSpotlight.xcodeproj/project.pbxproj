@@ -10,6 +10,9 @@
 		7F0E7E092471F75C00F265DC /* SongOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E7E082471F75C00F265DC /* SongOverviewView.swift */; };
 		7F0E7E0D2472035D00F265DC /* SearchRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E7E0C2472035D00F265DC /* SearchRowView.swift */; };
 		7F0E7E0F24722CC000F265DC /* ArtistListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E7E0E24722CC000F265DC /* ArtistListView.swift */; };
+		7F0E7E122473596B00F265DC /* ArtistDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E7E112473596B00F265DC /* ArtistDetailView.swift */; };
+		7F0E7E14247359C800F265DC /* ArtistDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E7E13247359C800F265DC /* ArtistDetailViewModel.swift */; };
+		7F0E7E1624735A2200F265DC /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E7E1524735A2200F265DC /* Artist.swift */; };
 		7F37A75324706CCF0063497D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F37A75224706CCF0063497D /* AppDelegate.swift */; };
 		7F37A75524706CCF0063497D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F37A75424706CCF0063497D /* SceneDelegate.swift */; };
 		7F37A75924706CD00063497D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F37A75824706CD00063497D /* Assets.xcassets */; };
@@ -35,6 +38,9 @@
 		7F0E7E082471F75C00F265DC /* SongOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongOverviewView.swift; sourceTree = "<group>"; };
 		7F0E7E0C2472035D00F265DC /* SearchRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRowView.swift; sourceTree = "<group>"; };
 		7F0E7E0E24722CC000F265DC /* ArtistListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistListView.swift; sourceTree = "<group>"; };
+		7F0E7E112473596B00F265DC /* ArtistDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailView.swift; sourceTree = "<group>"; };
+		7F0E7E13247359C800F265DC /* ArtistDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailViewModel.swift; sourceTree = "<group>"; };
+		7F0E7E1524735A2200F265DC /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		7F37A74F24706CCF0063497D /* SongSpotlight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SongSpotlight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F37A75224706CCF0063497D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F37A75424706CCF0063497D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +82,14 @@
 				ADE851AE9501425F9E607FC3 /* Pods_SongSpotlight.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7F0E7E102473595B00F265DC /* artist */ = {
+			isa = PBXGroup;
+			children = (
+				7F0E7E112473596B00F265DC /* ArtistDetailView.swift */,
+			);
+			path = artist;
 			sourceTree = "<group>";
 		};
 		7F37A74624706CCF0063497D = {
@@ -124,7 +138,8 @@
 		7F37A786247083970063497D /* views */ = {
 			isa = PBXGroup;
 			children = (
-				7FA9AD582470BA65000E7FA7 /* songs */,
+				7F0E7E102473595B00F265DC /* artist */,
+				7FA9AD582470BA65000E7FA7 /* song */,
 				7FA9AD46247094A7000E7FA7 /* search */,
 				7FA9AD452470949F000E7FA7 /* shared */,
 			);
@@ -153,6 +168,7 @@
 			children = (
 				7FA9AD4A24709DC0000E7FA7 /* SearchViewModel.swift */,
 				7FA9AD5B2470BAE6000E7FA7 /* SongDetailViewModel.swift */,
+				7F0E7E13247359C800F265DC /* ArtistDetailViewModel.swift */,
 			);
 			path = viewModels;
 			sourceTree = "<group>";
@@ -165,6 +181,7 @@
 				7FA9AD562470B66D000E7FA7 /* SongSearch.swift */,
 				7FA9AD5D2470BC4D000E7FA7 /* Song.swift */,
 				7FA9AD5F2470BCA9000E7FA7 /* Album.swift */,
+				7F0E7E1524735A2200F265DC /* Artist.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -178,14 +195,14 @@
 			path = api;
 			sourceTree = "<group>";
 		};
-		7FA9AD582470BA65000E7FA7 /* songs */ = {
+		7FA9AD582470BA65000E7FA7 /* song */ = {
 			isa = PBXGroup;
 			children = (
 				7FA9AD592470BA87000E7FA7 /* SongDetailView.swift */,
 				7F0E7E082471F75C00F265DC /* SongOverviewView.swift */,
 				7F0E7E0E24722CC000F265DC /* ArtistListView.swift */,
 			);
-			path = songs;
+			path = song;
 			sourceTree = "<group>";
 		};
 		B7E14CD4E161E78EBDB74151 /* Pods */ = {
@@ -317,6 +334,7 @@
 				7FA9AD4B24709DC0000E7FA7 /* SearchViewModel.swift in Sources */,
 				7F37A75324706CCF0063497D /* AppDelegate.swift in Sources */,
 				7FA9AD48247094BB000E7FA7 /* SearchField.swift in Sources */,
+				7F0E7E14247359C800F265DC /* ArtistDetailViewModel.swift in Sources */,
 				7F0E7E092471F75C00F265DC /* SongOverviewView.swift in Sources */,
 				7FA9AD602470BCA9000E7FA7 /* Album.swift in Sources */,
 				7F37A75524706CCF0063497D /* SceneDelegate.swift in Sources */,
@@ -324,10 +342,12 @@
 				7FA9AD4E2470B021000E7FA7 /* SongPreview.swift in Sources */,
 				7F0E7E0D2472035D00F265DC /* SearchRowView.swift in Sources */,
 				7FA9AD552470B407000E7FA7 /* GeniusApiToken.swift in Sources */,
+				7F0E7E122473596B00F265DC /* ArtistDetailView.swift in Sources */,
 				7FA9AD502470B07A000E7FA7 /* ArtistPreview.swift in Sources */,
 				7FA9AD572470B66D000E7FA7 /* SongSearch.swift in Sources */,
 				7FA9AD5E2470BC4D000E7FA7 /* Song.swift in Sources */,
 				7FA9AD532470B37F000E7FA7 /* GeniusApiService.swift in Sources */,
+				7F0E7E1624735A2200F265DC /* Artist.swift in Sources */,
 				7F0E7E0F24722CC000F265DC /* ArtistListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,7 +14,9 @@ struct SearchRowView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             Text("\(songPreview.title)")
+                .font(.headline)
             Text("\(songPreview.artist.name)")
+                .font(.footnote)
         }
     }
 }

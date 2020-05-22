@@ -14,7 +14,9 @@ struct ArtistListView: View {
     var body: some View {
         List {
             ForEach(artists) { artist in
-                Text(artist.name)
+                NavigationLink(destination: ArtistDetailView(preview: artist)) {
+                    Text(artist.name)
+                }
             }
         }
     }
