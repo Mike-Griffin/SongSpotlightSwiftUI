@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct Song : Codable {
+struct Song : Codable, Equatable {
+    static func == (lhs: Song, rhs: Song) -> Bool {
+        return lhs.title == rhs.title && lhs.url == rhs.url
+    }
+    
     let url : String
     let title : String
     let writers : [ArtistPreview]?

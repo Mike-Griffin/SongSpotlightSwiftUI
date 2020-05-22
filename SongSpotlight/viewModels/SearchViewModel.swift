@@ -27,10 +27,12 @@ import Foundation
         
         private func performQuery(_ q: String) {
             let noSpaces = q.replacingOccurrences(of: " ", with: "%20")
-            geniusApi.fetchSearch(query: noSpaces, page: 1) { results in
+            let request = generateRequest(query: noSpaces, page: 1)
+            geniusApi.fetch(request: request) { (results : Result<SearchResult, Error> ) in
                 switch(results){
-                case .success(let hits):
+                case .success(let result):
                     var querySongs = [SongPreview]()
+                    let hits = result.response.hits
                     for hit in hits {
                         querySongs.append(hit.result)
                     }
@@ -39,6 +41,10 @@ import Foundation
                     debugPrint("failed")
                 }
             }
+        }
+        
+        func generateRequest(query: String, page: Int) -> String {
+            return "search?q=\(query)&per_page=10&page=\(page)"
         }
     }
     

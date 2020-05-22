@@ -19,11 +19,12 @@ class SongDetailViewModel : ObservableObject {
     }
     
     func fetchSong() {
-        geniusApi.fetchSong(id: preview.id){ result in
+        let request = "songs/\(preview.id)"
+        geniusApi.fetch(request: request){ (result : Result<SongIdResult, Error> ) in
             switch(result){
-            case .success(let song):
+            case .success(let songResult):
                 print("great success")
-                self.song = song
+                self.song = songResult.response.song
             case .failure:
                 print("failed")
             }

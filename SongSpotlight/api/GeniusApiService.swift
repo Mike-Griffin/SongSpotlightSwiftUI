@@ -12,11 +12,11 @@ import Alamofire
 let apiEndpoint = "https://api.genius.com/"
 
 public struct GeniusApiService {
-    func fetchSearch(query: String, page: Int, completion: @escaping (Result<[SongHit], Error>) -> ()) {
-        let searchUrlString = "\(apiEndpoint)search?q=\(query)&per_page=10&page=\(page)"
-        guard let searchUrl = URL(string: searchUrlString) else {
+    func fetch<T: Codable>(request: String, completion: @escaping (Result<T, Error>) -> ()) {
+        let urlString = "\(apiEndpoint)\(request)"
+        guard let searchUrl = URL(string: urlString) else {
             print("Failed to build URL")
-            debugPrint(searchUrlString)
+            debugPrint(urlString)
             return
         }
         let headers : HTTPHeaders = [
@@ -24,41 +24,10 @@ public struct GeniusApiService {
         ]
         
         let response = AF.request(searchUrl, headers: headers).validate(statusCode: 200..<300).validate(contentType: ["application/json"])
-        response.responseDecodable(of: SearchResult.self) { result in
+        response.responseDecodable(of: T.self) { result in
             switch result.result {
             case .success(let data):
-                let hits = data.response.hits
-                if hits.count > 0 {
-                    completion(.success(hits))
-                } else {
-                    print("No results")
-                }
-            case .failure(let error):
-                print("Failed genius search")
-                debugPrint(error)
-                completion(.failure(error))
-            }
-        }
-    }
-    
-    func fetchSong(id: Int, completion: @escaping (Result<Song, Error>) -> ()) {
-        let songUrlString = "\(apiEndpoint)songs/\(id)"
-        print(songUrlString)
-        guard let url = URL(string: songUrlString) else {
-            print("Failed to build URL")
-            debugPrint(songUrlString)
-            return
-        }
-        let headers : HTTPHeaders = [
-            "Authorization": "Bearer \(token)",
-        ]
-        
-        let response = AF.request(url, headers: headers).validate(statusCode: 200..<300).validate(contentType: ["application/json"])
-        response.responseDecodable(of: SongIdResult.self) { result in
-            switch result.result {
-            case .success(let data):
-                completion(.success(data.response.song))
-               
+                    completion(.success(data))
             case .failure(let error):
                 print("Failed genius search")
                 debugPrint(error)
