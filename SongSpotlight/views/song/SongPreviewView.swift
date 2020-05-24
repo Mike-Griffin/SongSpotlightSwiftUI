@@ -1,14 +1,14 @@
 //
-//  SearchRowView.swift
+//  SongPreviewView.swift
 //  SongSpotlight
 //
-//  Created by Mike Griffin on 5/17/20.
+//  Created by Mike Griffin on 5/24/20.
 //  Copyright © 2020 Mike Griffin. All rights reserved.
 //
 
 import SwiftUI
 
-struct SearchRowView: View {
+struct SongPreviewView: View {
     let songPreview : SongPreview
     
     var body: some View {
@@ -21,8 +21,8 @@ struct SearchRowView: View {
     }
 }
 
-struct SearchRowView_Previews: PreviewProvider {
+struct SongPreviewView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchRowView(songPreview: SongPreview(title: "Test", artist: ArtistPreview(name: "Test", id: 1), image: nil, id: 1))
+        SongPreviewView(songPreview: SongPreview(title: "Test", artist: ArtistPreview(name: "Test", id: 1), image: nil, id: 1))
     }
 }

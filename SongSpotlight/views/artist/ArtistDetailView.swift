@@ -9,14 +9,28 @@
 import SwiftUI
 
 struct ArtistDetailView: View {
-    let viewModel : ArtistDetailViewModel
+    @ObservedObject var viewModel : ArtistDetailViewModel
     
     init(preview: ArtistPreview) {
         self.viewModel = ArtistDetailViewModel(preview: preview)
     }
     
     var body: some View {
-        Text(viewModel.preview.name)
+        VStack {
+            if viewModel.artist != nil {
+                ArtistOverviewView(artist: viewModel.artist!)
+                if(viewModel.songs != nil) {
+                    SongPreviewList(songPreviews: viewModel.songs!)
+                }
+            }
+            else {
+                Text(viewModel.preview.name)
+                
+            }
+            Spacer()
+        }
+        .navigationBarTitle("View Artist", displayMode: .inline)
+        .onAppear(perform: viewModel.fetchArtistInfo)
     }
 }
 

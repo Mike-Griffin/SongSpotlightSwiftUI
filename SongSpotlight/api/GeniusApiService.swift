@@ -14,6 +14,7 @@ let apiEndpoint = "https://api.genius.com/"
 public struct GeniusApiService {
     func fetch<T: Codable>(request: String, completion: @escaping (Result<T, Error>) -> ()) {
         let urlString = "\(apiEndpoint)\(request)"
+        print(urlString)
         guard let searchUrl = URL(string: urlString) else {
             print("Failed to build URL")
             debugPrint(urlString)

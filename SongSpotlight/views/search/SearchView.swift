@@ -27,11 +27,7 @@ struct SearchView: View {
         NavigationView {
             List {
                 Section(header: SearchField(searchText: $viewModel.searchText, placeholder: "Search song")) {
-                    ForEach(currentSongs) { song in
-                        NavigationLink(destination: SongDetailView(preview: song)) {
-                            SearchRowView(songPreview: song)
-                        }
-                    }
+                    SongPreviewList(songPreviews: currentSongs)
                 }
             }
         .navigationBarTitle("Search")
