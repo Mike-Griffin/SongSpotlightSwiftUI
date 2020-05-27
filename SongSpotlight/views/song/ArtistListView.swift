@@ -12,13 +12,13 @@ struct ArtistListView: View {
     let artists : [ArtistPreview]
     
     var body: some View {
-        List {
-            ForEach(artists) { artist in
+            ForEach(artists, id: \.self) { artist in
                 NavigationLink(destination: ArtistDetailView(preview: artist)) {
                     Text(artist.name)
                 }
+                .padding(.vertical, 5)
             }
-        }
+            .buttonStyle(PlainButtonStyle())
     }
 }
 

@@ -13,6 +13,7 @@ struct Song : Codable, Equatable {
         return lhs.title == rhs.title && lhs.url == rhs.url
     }
     
+    let primaryArtist : ArtistPreview
     let url : String
     let title : String
     let writers : [ArtistPreview]?
@@ -22,7 +23,7 @@ struct Song : Codable, Equatable {
     let releaseDate: String?
     let recordingLocation: String?
     private enum CodingKeys: String, CodingKey {
-        case url, album, releaseDate = "release_date", recordingLocation = "recording_location", title = "title", writers = "writer_artists", producers = "producer_artists", featured = "featured_artists"
+        case primaryArtist = "primary_artist", url, album, releaseDate = "release_date", recordingLocation = "recording_location", title = "title", writers = "writer_artists", producers = "producer_artists", featured = "featured_artists"
     }
 }
 

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ArtistPreview: Codable, Equatable, Identifiable {
+struct ArtistPreview: Codable, Equatable, Identifiable, Hashable {
     let name: String
     let id: Int
 }

@@ -15,11 +15,28 @@ struct SearchField: View {
     var body: some View {
         HStack {
             Image(systemName: "magnifyingglass")
-                .imageScale(.large)
+                .imageScale(.medium)
+                .foregroundColor(.gray)
             TextField(placeholder, text: $searchText)
                 .font(.headline)
-            .disableAutocorrection(true)
+                .disableAutocorrection(true)
+            if !searchText.isEmpty {
+                Button(action: {
+                    self.searchText = ""
+                }) {
+                    Image(systemName: "xmark")
+                        .font(.headline)
+                        .foregroundColor(.black)
+                        .imageScale(.small)
+                }.buttonStyle(BorderlessButtonStyle())
+            }
         }
+        .padding(8)
+        //.background(Color.orange)
+        .background(Color.white)
+        .mask(RoundedRectangle(cornerRadius: 8, style: .continuous))
+        .padding(2)
+        .listRowBackground(Color.ssBackground)
     }
 }
 

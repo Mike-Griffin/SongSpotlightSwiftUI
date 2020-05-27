@@ -16,7 +16,7 @@ struct SongDetailView: View {
             return viewModel.song!
         }
         else {
-            return Song(url: "", title: "empty", writers: nil, producers: nil, featured: nil, album: nil, releaseDate: nil, recordingLocation: nil)
+            return Song(primaryArtist: ArtistPreview(name: "", id: 1), url: "", title: "empty", writers: nil, producers: nil, featured: nil, album: nil, releaseDate: nil, recordingLocation: nil)
         }
     }
 

@@ -13,6 +13,12 @@ struct SearchView: View {
     
     @ObservedObject var viewModel = SearchViewModel()
     
+    // TODO I think I will want a Tab Bar at some point where this should go
+    init() {
+        UINavigationBar.appearance().backgroundColor = UIColor(named: "SSBackground")
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(named: "SSText")]
+    }
+    
     var currentSongs: [SongPreview] {
         get {
             if !viewModel.searchText.isEmpty {
@@ -30,7 +36,8 @@ struct SearchView: View {
                     SongPreviewList(songPreviews: currentSongs)
                 }
             }
-        .navigationBarTitle("Search")
+            .navigationBarTitle("Search")
+
         }
     }
 }

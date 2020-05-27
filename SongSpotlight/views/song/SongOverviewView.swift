@@ -14,8 +14,11 @@ struct SongOverviewView: View {
     var body: some View {
         VStack {
             Text(song.title)
+            Text(song.primaryArtist.name)
             if song.album != nil {
-                Text("Album: \(song.album!.name)")
+                NavigationLink(destination: AlbumDetailView(album: song.album!)) {
+                    Text("Album: \(song.album!.name)")
+                }
             }
             if song.featured != nil && song.featured!.count != 0{
                 VStack {
@@ -26,12 +29,18 @@ struct SongOverviewView: View {
                 }
             }
             if song.writers != nil {
-                VStack {
-                    Spacer()
-                    Section(header: Text("Writers")) {
-                        ArtistListView(artists: song.writers!)
+                Spacer()
+                VStack(alignment: .leading) {
+                    Section(header: SectionHeaderView(text: "Writers", icon: "pencil.circle")) {
+                        VStack {
+                            ArtistListView(artists: song.writers!)
+                        }
+                        .padding(.horizontal, 100)
+                        .background(Color.ssSecondaryBackground)
+                        
                     }
                 }
+
             }
             if song.producers != nil {
                 VStack {
@@ -47,6 +56,6 @@ struct SongOverviewView: View {
 
 struct SongOverviewView_Previews: PreviewProvider {
     static var previews: some View {
-        SongOverviewView(song: Song(url: "", title: "", writers: nil, producers: nil, featured: nil, album: nil, releaseDate: nil, recordingLocation: nil))
+        SongOverviewView(song: Song(primaryArtist: ArtistPreview(name: "", id: 1), url: "", title: "", writers: nil, producers: nil, featured: nil, album: nil, releaseDate: nil, recordingLocation: nil))
     }
 }
