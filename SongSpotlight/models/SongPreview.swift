@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SongPreview: Codable, Equatable, Identifiable {
+struct SongPreview: Codable, Equatable, Identifiable, Hashable {
     static func == (lhs: SongPreview, rhs: SongPreview) -> Bool {
         return lhs.id == rhs.id
     }

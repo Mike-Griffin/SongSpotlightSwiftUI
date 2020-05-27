@@ -9,17 +9,34 @@
 import SwiftUI
 
 struct AlbumDetailView: View {
-    init(album: Album) {
-        //self.viewModel = ArtistDetailViewModel(preview: preview)
+    @ObservedObject var viewModel : AlbumDetailViewModel
+    
+    init(preview: AlbumPreview) {
+        self.viewModel = AlbumDetailViewModel(preview: preview)
     }
     
     var body: some View {
-        Text("Album!")
+        VStack {
+            Text(viewModel.preview.name)
+            if viewModel.tracks != nil {
+                ScrollView {
+                    ForEach(viewModel.tracks!, id: \.self) { track in
+                        HStack {
+                            if track.number != nil {
+                                Text(String(track.number!))
+                                SongPreviewView(songPreview: track.song)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .onAppear(perform: viewModel.fetchAlbumInfo)
     }
 }
 
 struct AlbumDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        AlbumDetailView(album: Album(name: ""))
+        AlbumDetailView(preview: AlbumPreview(name: "", id: 1))
     }
 }

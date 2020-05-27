@@ -19,7 +19,7 @@ struct Song : Codable, Equatable {
     let writers : [ArtistPreview]?
     let producers: [ArtistPreview]?
     let featured: [ArtistPreview]?
-    let album : Album?
+    let album : AlbumPreview?
     let releaseDate: String?
     let recordingLocation: String?
     private enum CodingKeys: String, CodingKey {

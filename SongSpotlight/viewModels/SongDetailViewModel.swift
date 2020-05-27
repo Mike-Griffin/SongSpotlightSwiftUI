@@ -23,7 +23,6 @@ class SongDetailViewModel : ObservableObject {
         geniusApi.fetch(request: request){ (result : Result<SongIdResult, Error> ) in
             switch(result){
             case .success(let songResult):
-                print("great success")
                 self.song = songResult.response.song
             case .failure:
                 print("failed")

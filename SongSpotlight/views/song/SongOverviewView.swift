@@ -16,7 +16,7 @@ struct SongOverviewView: View {
             Text(song.title)
             Text(song.primaryArtist.name)
             if song.album != nil {
-                NavigationLink(destination: AlbumDetailView(album: song.album!)) {
+                NavigationLink(destination: AlbumDetailView(preview: song.album!)) {
                     Text("Album: \(song.album!.name)")
                 }
             }

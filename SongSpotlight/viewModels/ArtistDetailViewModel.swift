@@ -16,7 +16,7 @@ class ArtistDetailViewModel : ObservableObject {
     
     init(preview: ArtistPreview) {
         self.preview = preview
-        print(preview)
+        //print(preview)
     }
     
     func fetchArtistInfo() {
