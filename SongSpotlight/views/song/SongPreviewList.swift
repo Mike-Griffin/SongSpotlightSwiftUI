@@ -16,6 +16,7 @@ struct SongPreviewList: View {
             NavigationLink(destination: SongDetailView(preview: song)) {
                 SongPreviewView(songPreview: song)
             }
+        .buttonStyle(PlainButtonStyle())
         }
     }
 }

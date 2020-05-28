@@ -13,6 +13,7 @@
 		7F0251F5247E07E60036E380 /* AlbumDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0251F4247E07E60036E380 /* AlbumDetailView.swift */; };
 		7F0251F7247E0F9A0036E380 /* AlbumDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0251F6247E0F9A0036E380 /* AlbumDetailViewModel.swift */; };
 		7F0251F9247E102F0036E380 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0251F8247E102F0036E380 /* Album.swift */; };
+		7F0251FB247F2C2C0036E380 /* ArtistListSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0251FA247F2C2C0036E380 /* ArtistListSectionView.swift */; };
 		7F0E7E092471F75C00F265DC /* SongOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E7E082471F75C00F265DC /* SongOverviewView.swift */; };
 		7F0E7E0F24722CC000F265DC /* ArtistListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E7E0E24722CC000F265DC /* ArtistListView.swift */; };
 		7F0E7E122473596B00F265DC /* ArtistDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0E7E112473596B00F265DC /* ArtistDetailView.swift */; };
@@ -50,6 +51,7 @@
 		7F0251F4247E07E60036E380 /* AlbumDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailView.swift; sourceTree = "<group>"; };
 		7F0251F6247E0F9A0036E380 /* AlbumDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewModel.swift; sourceTree = "<group>"; };
 		7F0251F8247E102F0036E380 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		7F0251FA247F2C2C0036E380 /* ArtistListSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistListSectionView.swift; sourceTree = "<group>"; };
 		7F0E7E082471F75C00F265DC /* SongOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongOverviewView.swift; sourceTree = "<group>"; };
 		7F0E7E0E24722CC000F265DC /* ArtistListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistListView.swift; sourceTree = "<group>"; };
 		7F0E7E112473596B00F265DC /* ArtistDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistDetailView.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 			children = (
 				7FA9AD592470BA87000E7FA7 /* SongDetailView.swift */,
 				7F0E7E082471F75C00F265DC /* SongOverviewView.swift */,
+				7F0251FA247F2C2C0036E380 /* ArtistListSectionView.swift */,
 				7F0E7E0E24722CC000F265DC /* ArtistListView.swift */,
 				7F1EEC8D247AE25700792458 /* SongPreviewView.swift */,
 				7F1EEC8F247AE2FB00792458 /* SongPreviewList.swift */,
@@ -400,6 +403,7 @@
 				7FA9AD532470B37F000E7FA7 /* GeniusApiService.swift in Sources */,
 				7F0251F2247DE3B80036E380 /* SectionHeaderView.swift in Sources */,
 				7F0E7E1624735A2200F265DC /* Artist.swift in Sources */,
+				7F0251FB247F2C2C0036E380 /* ArtistListSectionView.swift in Sources */,
 				7F0E7E0F24722CC000F265DC /* ArtistListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

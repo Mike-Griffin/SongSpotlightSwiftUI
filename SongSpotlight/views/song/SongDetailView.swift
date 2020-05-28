@@ -36,7 +36,7 @@ struct SongDetailView: View {
                 Spacer()
             }
         .navigationBarTitle("View Song")
-            
+            .background(Color.ssBackground.edgesIgnoringSafeArea(.all))
         .onAppear(perform: self.viewModel.fetchSong)
     }
 }

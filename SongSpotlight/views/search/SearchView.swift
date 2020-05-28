@@ -14,10 +14,11 @@ struct SearchView: View {
     @ObservedObject var viewModel = SearchViewModel()
     
     // TODO I think I will want a Tab Bar at some point where this should go
-    init() {
-        UINavigationBar.appearance().backgroundColor = UIColor(named: "SSBackground")
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(named: "SSText")]
-    }
+//    init() {
+//        UINavigationBar.appearance().backgroundColor = UIColor(named: "SSSecondaryBackground")
+//        UINavigationBar.bar
+//        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(named: "SSText")]
+//    }
     
     var currentSongs: [SongPreview] {
         get {

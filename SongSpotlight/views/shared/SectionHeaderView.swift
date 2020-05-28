@@ -30,8 +30,9 @@ struct SectionHeaderView: View {
         .padding(.horizontal, 14)
         .background(Color.ssHeaderBackground)
         .mask(RoundedRectangle(cornerRadius: 14, style: .continuous))
-        .padding(.leading, -9)
-        .padding(.bottom, -10)
+        .padding(.leading, 8)
+        .padding(.bottom, -8)
+        .frame(width: nil, height: 30)
     }
 }
 

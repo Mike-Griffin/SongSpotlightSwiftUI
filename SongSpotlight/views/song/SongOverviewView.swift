@@ -14,41 +14,25 @@ struct SongOverviewView: View {
     var body: some View {
         VStack {
             Text(song.title)
+                .font(.title)
             Text(song.primaryArtist.name)
             if song.album != nil {
                 NavigationLink(destination: AlbumDetailView(preview: song.album!)) {
                     Text("Album: \(song.album!.name)")
                 }
+            .buttonStyle(PlainButtonStyle())
             }
+            
             if song.featured != nil && song.featured!.count != 0{
-                VStack {
-                    Spacer()
-                    Text("Featured Artists")
-                        .font(.headline)
-                    ArtistListView(artists: song.featured!)
-                }
+                ArtistListSectionView(sectionHeaderText: "Featured Artists", sectionHeaderIcon: nil, artists: song.featured!)
             }
-            if song.writers != nil {
-                Spacer()
-                VStack(alignment: .leading) {
-                    Section(header: SectionHeaderView(text: "Writers", icon: "pencil.circle")) {
-                        VStack {
-                            ArtistListView(artists: song.writers!)
-                        }
-                        .padding(.horizontal, 100)
-                        .background(Color.ssSecondaryBackground)
-                        
-                    }
-                }
-
+            
+            if song.writers != nil && song.writers!.count != 0 {
+                ArtistListSectionView(sectionHeaderText: "Writers", sectionHeaderIcon: "pencil.circle", artists: song.writers!)
             }
+            
             if song.producers != nil {
-                VStack {
-                    Spacer()
-                    Text("Producers")
-                        .font(.headline)
-                    ArtistListView(artists: song.producers!)
-                }
+                ArtistListSectionView(sectionHeaderText: "Producers", sectionHeaderIcon: "keyboard", artists: song.producers!)
             }
         }
     }

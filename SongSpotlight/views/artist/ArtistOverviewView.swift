@@ -16,14 +16,14 @@ struct ArtistOverviewView: View {
             Text(artist.name)
                 .font(.largeTitle)
             if artist.alternateNames != nil {
-                Text("Nicknames")
-                    .font(.headline)
-                ForEach(0..<self.artist.alternateNames!.count) { i in
+                Section(header: SectionHeaderView(text: "Nicknames", icon: nil)) {
+                    ForEach(0..<self.artist.alternateNames!.count) { i in
 
-                    Text(self.artist.alternateNames![i])
+                        Text(self.artist.alternateNames![i])
+                    }
+                    .lineSpacing(20)
                 }
-                .lineSpacing(20)
-                Spacer()
+                //Spacer()
             }
         }
     }

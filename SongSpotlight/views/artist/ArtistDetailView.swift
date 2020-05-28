@@ -20,7 +20,9 @@ struct ArtistDetailView: View {
             if viewModel.artist != nil {
                 ArtistOverviewView(artist: viewModel.artist!)
                 if(viewModel.songs != nil) {
+                    Section(header: SectionHeaderView(text: "Popular Songs", icon: nil)) {
                     SongPreviewList(songPreviews: viewModel.songs!)
+                    }
                 }
             }
             else {

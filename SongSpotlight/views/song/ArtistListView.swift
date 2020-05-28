@@ -17,7 +17,10 @@ struct ArtistListView: View {
                     Text(artist.name)
                 }
                 .padding(.vertical, 5)
+                .lineSpacing(10)
             }
+            .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+
             .buttonStyle(PlainButtonStyle())
     }
 }
