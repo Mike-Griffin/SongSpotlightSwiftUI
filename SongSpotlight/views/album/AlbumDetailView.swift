@@ -17,21 +17,28 @@ struct AlbumDetailView: View {
     
     var body: some View {
         VStack {
-            Text(viewModel.preview.name)
             if viewModel.tracks != nil {
                 ScrollView {
-                    ForEach(viewModel.tracks!, id: \.self) { track in
-                        HStack {
-                            if track.number != nil {
-                                Text(String(track.number!))
-                                SongPreviewView(songPreview: track.song)
+                    VStack(alignment: .leading, spacing: 12) {
+                        ForEach(viewModel.tracks!, id: \.self) { track in
+                            HStack {
+                                if track.number != nil {
+                                    NavigationLink(destination: SongDetailView(preview: track.song)) {
+                                        Text(String(track.number!))
+                                        SongPreviewView(songPreview: track.song)
+                                    }
+                                   .buttonStyle(PlainButtonStyle())
+                                }
                             }
                         }
                     }
                 }
             }
+ 
         }
+        .navigationBarTitle("\(viewModel.preview.name)", displayMode: .inline)
         .onAppear(perform: viewModel.fetchAlbumInfo)
+
     }
 }
 

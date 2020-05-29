@@ -32,11 +32,16 @@ struct SearchView: View {
     
     var body: some View {
         NavigationView {
+
             List {
                 Section(header: SearchField(searchText: $viewModel.searchText, placeholder: "Search song")) {
-                    SongPreviewList(songPreviews: currentSongs)
+                    SongPreviewList(songPreviews: currentSongs, searchViewModel: viewModel)
                 }
+                .listRowBackground(Color.ssBackground)
+
             }
+            .background(Color.ssBackground)
+
             .navigationBarTitle("Search")
 
         }

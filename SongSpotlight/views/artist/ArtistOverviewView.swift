@@ -12,16 +12,16 @@ struct ArtistOverviewView: View {
     let artist: Artist
 
     var body: some View {
-        VStack {
-            Text(artist.name)
-                .font(.largeTitle)
-            if artist.alternateNames != nil {
+        VStack(alignment: .leading) {
+            //Text(artist.name)
+              //  .font(.largeTitle)
+            if artist.alternateNames != nil && artist.alternateNames!.count != 0 {
                 Section(header: SectionHeaderView(text: "Nicknames", icon: nil)) {
                     ForEach(0..<self.artist.alternateNames!.count) { i in
 
                         Text(self.artist.alternateNames![i])
                     }
-                    .lineSpacing(20)
+                    //.lineSpacing(20)
                 }
                 //Spacer()
             }

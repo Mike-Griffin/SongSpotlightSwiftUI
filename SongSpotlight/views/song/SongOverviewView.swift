@@ -12,29 +12,32 @@ struct SongOverviewView: View {
     let song: Song
     
     var body: some View {
+
         VStack {
-            Text(song.title)
+            Text(self.song.title)
                 .font(.title)
-            Text(song.primaryArtist.name)
-            if song.album != nil {
-                NavigationLink(destination: AlbumDetailView(preview: song.album!)) {
-                    Text("Album: \(song.album!.name)")
+            Text(self.song.primaryArtist.name)
+            if self.song.album != nil {
+                NavigationLink(destination: AlbumDetailView(preview: self.song.album!)) {
+                    Text("Album: \(self.song.album!.name)")
                 }
             .buttonStyle(PlainButtonStyle())
             }
             
-            if song.featured != nil && song.featured!.count != 0{
-                ArtistListSectionView(sectionHeaderText: "Featured Artists", sectionHeaderIcon: nil, artists: song.featured!)
+                if self.song.featured != nil && self.song.featured!.count != 0{
+                    ArtistListSectionView(sectionHeaderText: "Featured Artists", sectionHeaderIcon: nil, artists: self.song.featured!)
+                }
+                
+                if self.song.writers != nil && self.song.writers!.count != 0 {
+                    ArtistListSectionView(sectionHeaderText: "Writers", sectionHeaderIcon: "pencil.circle", artists: self.song.writers!)
+                }
+                
+                if self.song.producers != nil && self.song.producers!.count != 0 {
+                    ArtistListSectionView(sectionHeaderText: "Producers", sectionHeaderIcon: "keyboard", artists: self.song.producers!)
+                }
+                
             }
-            
-            if song.writers != nil && song.writers!.count != 0 {
-                ArtistListSectionView(sectionHeaderText: "Writers", sectionHeaderIcon: "pencil.circle", artists: song.writers!)
-            }
-            
-            if song.producers != nil {
-                ArtistListSectionView(sectionHeaderText: "Producers", sectionHeaderIcon: "keyboard", artists: song.producers!)
-            }
-        }
+
     }
 }
 

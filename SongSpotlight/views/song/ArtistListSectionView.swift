@@ -20,7 +20,7 @@ struct ArtistListSectionView: View {
                 VStack(alignment: .leading){
                     ArtistListView(artists: artists)
                 }
-                .padding(.vertical, 4)
+                //.padding(.vertical, 4)
                 .padding(.horizontal, 16)
                 .background(Color.ssSecondaryBackground)
                 .cornerRadius(20)

@@ -16,21 +16,26 @@ struct ArtistDetailView: View {
     }
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
+            Text(viewModel.preview.name)
+                .font(.largeTitle)
             if viewModel.artist != nil {
                 ArtistOverviewView(artist: viewModel.artist!)
                 if(viewModel.songs != nil) {
                     Section(header: SectionHeaderView(text: "Popular Songs", icon: nil)) {
-                    SongPreviewList(songPreviews: viewModel.songs!)
+                    SongPreviewList(songPreviews: viewModel.songs!, searchViewModel: nil)
                     }
                 }
             }
             else {
-                Text(viewModel.preview.name)
-                
+                VStack {
+                    LoadingView(isLoading: .constant(true))
+                }
             }
             Spacer()
+            
         }
+        .frame(maxWidth: .infinity)
         .navigationBarTitle("View Artist", displayMode: .inline)
         .onAppear(perform: viewModel.fetchArtistInfo)
     }
@@ -38,6 +43,6 @@ struct ArtistDetailView: View {
 
 struct ArtistDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ArtistDetailView(preview: ArtistPreview(name: "Jack", id: 1))
+        ArtistDetailView(preview: ArtistPreview(name: "Harry", id: 22457))
     }
 }

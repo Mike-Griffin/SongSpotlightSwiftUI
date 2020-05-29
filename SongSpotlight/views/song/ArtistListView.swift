@@ -11,7 +11,16 @@ import SwiftUI
 struct ArtistListView: View {
     let artists : [ArtistPreview]
     
+    init(artists: [ArtistPreview]){
+        self.artists = artists
+        UITableView.appearance().separatorColor = UIColor.black
+        UITableView.appearance().tableFooterView = UIView()
+        UITableView.appearance().backgroundColor = UIColor(named: "SSSecondaryBackgroundColor")
+        
+    }
+    
     var body: some View {
+        List {
             ForEach(artists, id: \.self) { artist in
                 NavigationLink(destination: ArtistDetailView(preview: artist)) {
                     Text(artist.name)
@@ -20,8 +29,12 @@ struct ArtistListView: View {
                 .lineSpacing(10)
             }
             .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-
+            .listRowBackground(Color.ssSecondaryBackground)
             .buttonStyle(PlainButtonStyle())
+        }
+        .id(UUID().uuidString)
+        .background(Color.ssSecondaryBackground)
+        //.listStyle(GroupedListStyle())
     }
 }
 

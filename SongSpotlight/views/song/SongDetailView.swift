@@ -30,8 +30,8 @@ struct SongDetailView: View {
                     SongOverviewView(song: viewModel.song!)
                 }
                 else {
-                    Text(viewModel.preview.title)
-                    
+                    LoadingView(isLoading: .constant(true))
+                        .frame(maxWidth: .infinity)
                 }
                 Spacer()
             }
