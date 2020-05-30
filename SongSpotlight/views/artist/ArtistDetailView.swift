@@ -16,26 +16,38 @@ struct ArtistDetailView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(viewModel.preview.name)
-                .font(.largeTitle)
-            if viewModel.artist != nil {
-                ArtistOverviewView(artist: viewModel.artist!)
-                if(viewModel.songs != nil) {
-                    Section(header: SectionHeaderView(text: "Popular Songs", icon: nil)) {
-                    SongPreviewList(songPreviews: viewModel.songs!, searchViewModel: nil)
+        GeometryReader { geometry in
+            ScrollView(.vertical) {
+            VStack(alignment: .leading) {
+                Text(self.viewModel.preview.name)
+                    .font(.largeTitle)
+                if self.viewModel.artist != nil {
+                    ArtistOverviewView(artist: self.viewModel.artist!)
+                        //.frame(width: geometry.size.width, height: geometry.size.height / 3)
+                        //.background(Color.ssSecondaryBackground)
+                    if(self.viewModel.songs.count != 0) {
+                        Section(header: SectionHeaderView(text: "Popular Songs", icon: nil)) {
+                            SongPreviewList(songPreviews: self.viewModel.songs, viewModel: self.viewModel)
+                            .frame(width: geometry.size.width - 32, height: geometry.size.height / 3)
+
+                        }
+                        //.background(Color.ssSecondaryBackground)
                     }
+                    Spacer()
                 }
-            }
-            else {
-                VStack {
-                    LoadingView(isLoading: .constant(true))
+                else {
+                    VStack {
+                        LoadingView(isLoading: .constant(true))
+                    }
+                    .frame(width: geometry.size.width, height: geometry.size.height)
                 }
+               // Spacer()
             }
-            Spacer()
-            
+            .background(Color.ssBackground)
+            }
+            //.frame(maxWidth: .infinity, maxHeight: .infinity)
+
         }
-        .frame(maxWidth: .infinity)
         .navigationBarTitle("View Artist", displayMode: .inline)
         .onAppear(perform: viewModel.fetchArtistInfo)
     }

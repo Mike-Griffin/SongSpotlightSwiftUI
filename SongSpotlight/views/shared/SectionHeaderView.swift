@@ -32,7 +32,6 @@ struct SectionHeaderView: View {
         .mask(RoundedRectangle(cornerRadius: 14, style: .continuous))
         .padding(.leading, 8)
         .padding(.bottom, -8)
-        .frame(width: nil, height: 30)
     }
 }
 

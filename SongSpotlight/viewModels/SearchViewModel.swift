@@ -9,7 +9,9 @@
 import Foundation
 
 
-    class SearchViewModel : ObservableObject {
+class SearchViewModel : ObservableObject, LoadSongsViewModelProtocol {
+
+    
                 
         @Published var searchText = "" {
             didSet {
@@ -36,7 +38,7 @@ import Foundation
             fetchSongs()
         }
         
-        func loadMoreSongs(currentSong: SongPreview? = nil) {
+        func loadMore(currentSong: SongPreview? = nil) {
             guard let currentSong = currentSong else {
                 return
             }

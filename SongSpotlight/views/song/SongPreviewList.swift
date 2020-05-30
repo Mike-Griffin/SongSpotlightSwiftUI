@@ -10,28 +10,26 @@ import SwiftUI
 
 struct SongPreviewList: View {
     let songPreviews: [SongPreview]
-    let searchViewModel : SearchViewModel?
+    let viewModel : LoadSongsViewModelProtocol
     var body: some View {
-        
+        List {
         ForEach(songPreviews) { song in
             NavigationLink(destination: SongDetailView(preview: song)) {
-                if self.searchViewModel != nil {
                     SongPreviewView(songPreview: song)
-                        .onAppear{
-                            self.searchViewModel!.loadMoreSongs(currentSong: song)
+                        .onAppear {
+                            self.viewModel.loadMore(currentSong: song)
                     }
-                }
-                else {
-                    SongPreviewView(songPreview: song)
-                }
+
             }
         .buttonStyle(PlainButtonStyle())
+        }
+        .listRowBackground(Color.ssBackground)
         }
     }
 }
 
 struct SongPreviewList_Previews: PreviewProvider {
     static var previews: some View {
-        SongPreviewList(songPreviews: [SongPreview(title: "", artist: ArtistPreview(name: "", id: 1), image: nil, id: 1)], searchViewModel: nil)
+        SongPreviewList(songPreviews: [SongPreview(title: "", artist: ArtistPreview(name: "", id: 1), image: nil, id: 1)], viewModel: SearchViewModel())
     }
 }

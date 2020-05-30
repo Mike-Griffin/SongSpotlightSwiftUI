@@ -32,13 +32,16 @@ struct SearchView: View {
     
     var body: some View {
         NavigationView {
+            GeometryReader { geometry in
+            VStack {
+                Section(header: SearchField(searchText: self.$viewModel.searchText, placeholder: "Search song")) {
+                    SongPreviewList(songPreviews: self.currentSongs, viewModel: self.viewModel)
+                        
 
-            List {
-                Section(header: SearchField(searchText: $viewModel.searchText, placeholder: "Search song")) {
-                    SongPreviewList(songPreviews: currentSongs, searchViewModel: viewModel)
+               }
+                    
                 }
-                .listRowBackground(Color.ssBackground)
-
+                .frame(width: geometry.size.width, height: geometry.size.height)
             }
             .background(Color.ssBackground)
 
